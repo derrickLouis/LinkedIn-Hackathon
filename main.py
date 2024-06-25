@@ -1,6 +1,7 @@
 import json
 from django.http import HttpResponse
 import smtplib, ssl
+print("hello")
 
 
 def main():
