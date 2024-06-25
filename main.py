@@ -1,10 +1,10 @@
 import json
 from django.http import HttpResponse
+from django.shortcuts import render
 import smtplib, ssl
 
 
 def main():
-    emailList = [] #Holds single email
 
     with open("user_data.json") as users_file: 
         users = json.load(users_file) #Saves user json as dict
@@ -16,27 +16,19 @@ def main():
         courses = json.load(courses_file) #Saves courses json as dict
     
     def email_gather(request): #View for email input from site
-        emailList.append(request) #saves request to emailList
-        return
-
-    if len(emailList) > 0:
-        email = emailList[0]
-    else:
-        email = None
-    
-    if email:
         port = 587  # For starttls
         smtp_server = "smtp.gmail.com"
         sender_email = "linkedinhackathon30@gmail.com"
         password = "hackathon123"
-        receiver_email = email
+        receiver_email = request
         message = """This is your internship Message"""
         context = ssl.create_default_context()
         with smtplib.SMTP(smtp_server, port) as server: #Opens SMTP server to send email
             server.starttls(context=context)
             server.login(sender_email, password) #Logs into sender email
-            server.sendmail(sender_email, receiver_email, message) #Sends message
-
+            server.sendmail(sender_email, receiver_email, message) #Sends message #saves request to emailList
+        
+        return render(request, 'index.html')
 
 if __name__ == "__main__":
     main()
