@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LinkedIn Mockup</title>
-    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="{% static 'mystyle.css' %}">
 </head>
 <body>
     <header>
@@ -39,13 +40,9 @@
             <div class="post-box">
                 <textarea placeholder="What's on your mind?"></textarea>
                 <button>Post</button>
-                <button class="button" onclick="location.href='post.html'">Email Collection</button>
+                <a href='{% url "post" %}'><button class="button">Email Collection</button></a>>
             </div>
             <div class="feed">
-                <div class="post" id="submission">
-                    <h3>John Doe</h3>
-                    <p>This is a test</p>
-                </div>
                 <div class="post">
                     <h3>Jane Smith</h3>
                     <p>Excited to start my new job at XYZ Corp!</p>

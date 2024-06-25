@@ -25,4 +25,10 @@ def email_gather(request):
         except Exception as e:
             return HttpResponse(f"An error occurred: {str(e)}")
     else:
-        return render(request, 'post.html')
+        return render(request, 'index.html')
+
+def index(request):
+    return render(request, 'index.html')
+
+def second_page(request):
+    return render(request, 'post.html')
