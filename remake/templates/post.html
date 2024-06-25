@@ -1,10 +1,12 @@
+
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LinkedIn Post</title>
-    <link rel="stylesheet" href="mystyles2.css">
+    <link rel="stylesheet" href="{% static 'mystyles2.css' %}">
 </head>
 <body>
     <header>
@@ -30,7 +32,7 @@
                 <p>This is a sample LinkedIn post content. Feel free to share your thoughts and comments below.</p>
             </div>
             <div class="post-footer">
-                <form action="/email_gather/" method="post">
+                <form action="{% url 'email_gather' %}" method="post">
                     <input type="email" name="email" placeholder="Enter your email" class="email-input" required>
                     <button type="submit" class="button">Submit</button>
                 </form>
