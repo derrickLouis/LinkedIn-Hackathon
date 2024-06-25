@@ -84,3 +84,14 @@ nav a {
     border-radius: 5px;
     width: 100%;
 }
+
+#submit {
+    border-radius: 50%;
+    background-color: #0A66C2;
+    margin: auto;
+}
+
+#postPic {
+    width: 100px;
+    height: 60px;
+}

@@ -9,8 +9,8 @@ def email_gather(request):
     if request.method == 'POST':
         port = 587  # For starttls
         smtp_server = "smtp.gmail.com"
-        sender_email = "linkedinhackathon30@gmail.com"
-        password = "trxt vbgt bvwv wfds"
+        sender_email = "websanitylwc@gmail.com"
+        password = "tfdy pzxp yflr foac"
         receiver_email = request.POST.get('email')
         message = """Subject: Internship Opportunity
 

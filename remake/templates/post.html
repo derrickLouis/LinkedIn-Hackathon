@@ -24,17 +24,21 @@
             <div class="post-header">
                 <img src="https://via.placeholder.com/50" alt="User Avatar" class="avatar">
                 <div class="user-info">
-                    <h2>User Name</h2>
-                    <p>Position - Company</p>
+                    <h2>John Doe</h2>
+                    <p>Co-CoFounder @ LinkedIn</p>
                 </div>
             </div>
-            <div class="post-body">
-                <p>This is a sample LinkedIn post content. Feel free to share your thoughts and comments below.</p>
+            <div class="post-body" style="margin:auto;">
+                <p>Welcome to this super amazing opportunity with LinkedIn. We're offering you a 
+                    chance to get your foot in the door as a SWE intern. This will close tonight at 11:59 EST as 
+                    we only want to screen a select few. Enter your email in the box below to be sent the details via email. Good Luck!</p>
+
+                <img id="postPic" style="width:50%; height:200px;"src="{% static 'postpic.png' %}">
             </div>
             <div class="post-footer">
                 <form action="{% url 'email_gather' %}" method="post">
                     <input type="email" name="email" placeholder="Enter your email" class="email-input" required>
-                    <button type="submit" class="button">Submit</button>
+                    <button type="submit" class="button" id="submit">Submit</button>
                 </form>
             </div>
         </div>
